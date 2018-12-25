@@ -12,7 +12,7 @@ from django.utils.translation import ugettext_lazy as _
 
 RICHTEXT_ALLOWED_STYLES = ('border', 'display', 'float', 'list-style-type', 
     'margin', 'margin-bottom', 'margin-left', 'margin-right', 'margin-top', 'padding-left', 
-    'text-align', 'text-decoration', 'vertical-align', 'color', 'background-color')
+    'text-align', 'text-decoration', 'vertical-align', 'color', 'background-color', 'font-family', 'font-size')
 
 # The following settings are already defined with default values in
 # the ``defaults.py`` module within each of Mezzanine's apps, but are

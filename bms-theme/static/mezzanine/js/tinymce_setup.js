@@ -74,10 +74,11 @@
         convert_urls: false,
         menubar: false,
         statusbar: false,
-        toolbar: ("insertfile undo redo | styleselect | forecolor backcolor | bold italic | " +
+        toolbar: ("insertfile undo redo | styleselect | fontselect fontsizeselect | " +
+                  "forecolor backcolor | bold italic | " +
                   "alignleft aligncenter alignright alignjustify | " +
                   "bullist numlist outdent indent | link image table | " +
-                  "code fullscreen"),
+                  "searchreplace code fullscreen"),
         file_browser_callback: custom_file_browser,
         content_css: window.__tinymce_css,
         valid_elements: "*[*]"  // Don't strip anything since this is handled by bleach.
