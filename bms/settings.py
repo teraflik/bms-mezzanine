@@ -10,6 +10,10 @@ from django.utils.translation import ugettext_lazy as _
 # MEZZANINE SETTINGS #
 ######################
 
+RICHTEXT_ALLOWED_STYLES = ('border', 'display', 'float', 'list-style-type', 
+    'margin', 'margin-bottom', 'margin-left', 'margin-right', 'margin-top', 'padding-left', 
+    'text-align', 'text-decoration', 'vertical-align', 'color', 'background-color')
+
 # The following settings are already defined with default values in
 # the ``defaults.py`` module within each of Mezzanine's apps, but are
 # common enough to be put here, commented out, for conveniently
@@ -234,6 +238,7 @@ if DJANGO_VERSION < (1, 9):
 ################
 
 INSTALLED_APPS = (
+    "bms-theme",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
