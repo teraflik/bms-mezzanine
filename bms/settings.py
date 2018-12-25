@@ -202,6 +202,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
         "DIRS": [
+            os.path.join(PROJECT_ROOT, "bms-theme/templates"),
             os.path.join(PROJECT_ROOT, "templates")
         ],
         "OPTIONS": {
