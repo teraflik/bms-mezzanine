@@ -78,7 +78,8 @@
                   "forecolor backcolor | bold italic | " +
                   "alignleft aligncenter alignright alignjustify | " +
                   "bullist numlist outdent indent | link image table | " +
-                  "searchreplace code fullscreen"),
+                  "removeformat searchreplace code fullscreen"),
+        font_formats: 'Vesper Libre=Vesper Libre,helvetica,sans-serif;Laila=Laila,arial,sans-serif',
         file_browser_callback: custom_file_browser,
         content_css: window.__tinymce_css,
         valid_elements: "*[*]"  // Don't strip anything since this is handled by bleach.
