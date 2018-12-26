@@ -11,8 +11,15 @@ body {
 .hkp-logo {
 	height: 120px;
 }
-.hkp-logo-big {
-	height: 300px;
+
+.bms-search{
+	height: 120px;
+}
+.bms-search > div{
+	display: flex;
+    align-items: center;
+    justify-content: right;
+    height: 100%;
 }
 
 .book-thumbnail{

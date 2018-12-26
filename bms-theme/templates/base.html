@@ -60,7 +60,7 @@
 </head>
 
 <body id="{% block body_id %}body{% endblock %}">
-
+    {% comment %}
     <div class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
@@ -73,37 +73,46 @@
                 {% block navbar_title %}
                 {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
                 {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}
-                {% endblock%}
+                {% endblock %}
             </div>
             <div class="navbar-collapse collapse">
-                {#{% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}#}
+                {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}#}
             </div>
         </div>
     </div>
+    {% endcomment %}
 
     <div class="container">
-
-    {% nevercache %}
-    {% if messages %}
-    <div class="messages">
-        {% for message in messages %}
-        <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            {{ message }}
+        {% nevercache %}
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                {{ message }}
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
-    </div>
-    {% endif %}
-    {% endnevercache %}
+        {% endif %}
+        {% endnevercache %}
 
-    {#<h1>{% block title %}{% endblock %}</h1>#}
-    <img class="hkp-logo" src="{% static "img/hkp-logo.png" %}" />
+        <div class="row">
+            <div class="col-sm-6 col-md-8">
+                {#<h1>{% block title %}{% endblock %}</h1>#}
+                <img class="hkp-logo" src="{% static "img/hkp-logo.png" %}" />
+            </div>
+            <div class="col-sm-6 col-md-4 bms-search">
+                {% search_form %}
+            </div>
+        </div>
+       
+       
 
-    <ul class="breadcrumb">
-    {% spaceless %}
-    {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
-    {% endspaceless %}
-    </ul>
+        <ul class="breadcrumb">
+        {% spaceless %}
+        {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+        {% endspaceless %}
+        </ul>
 
     </div>
 
@@ -111,7 +120,6 @@
         <div class="row">
 
         <div class="col-md-3">
-            {% search_form %}
             {% block left_panel %}
             <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
             {% endblock %}
