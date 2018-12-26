@@ -1,0 +1,28 @@
+.bms-title{
+	color: rgb(112, 48, 160);
+	font-size: 3em;
+	text-align: center;
+}
+
+.bms-level-1{
+	color: rgb(192,0,0);
+	font-size: 2em;
+	text-align: center;
+}
+
+.bms-level-2{
+	color: rgb(192,0,0);
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.bms-emphasis{
+	color: rgb(131, 60, 11);
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.bms-text{
+	font-size: 1em;
+	text-align: justify;
+}

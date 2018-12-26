@@ -64,8 +64,8 @@
         height: '500px',
         language: language_codes[window.__language_code] || 'en',
         plugins: [
-            "advlist autolink lists link image charmap print preview anchor textcolor",
-            "searchreplace visualblocks code fullscreen",
+            "advlist autolink lists link image charmap print preview hr anchor textcolor",
+            "searchreplace wordcount visualblocks code fullscreen colorpicker",
             "insertdatetime media table contextmenu paste"
         ],
         link_list: window.__link_list_url,
@@ -75,11 +75,17 @@
         menubar: false,
         statusbar: false,
         toolbar: ("insertfile undo redo | styleselect | fontselect fontsizeselect | " +
-                  "forecolor backcolor | bold italic | " +
-                  "alignleft aligncenter alignright alignjustify | " +
-                  "bullist numlist outdent indent | link image table | " +
-                  "removeformat searchreplace code fullscreen"),
+                  "forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify |" +
+                  "bullist numlist outdent indent | link image hr table | " +
+                  "removeformat searchreplace | code preview fullscreen"),
         font_formats: 'Vesper Libre=Vesper Libre,helvetica,sans-serif;Laila=Laila,arial,sans-serif',
+        style_formats: [
+            {title: 'Title', block: 'h1', classes: 'bms-title'},
+            {title: 'Level 1', block: 'h2', classes: 'bms-level-1'},
+            {title: 'Level 2', block: 'h3', classes: 'bms-level-2'},
+            {title: 'Emphasis', block: 'p', classes: 'bms-emphasis'},
+            {title: 'Text', block: 'p', classes: 'bms-text'},
+          ],
         file_browser_callback: custom_file_browser,
         content_css: window.__tinymce_css,
         valid_elements: "*[*]"  // Don't strip anything since this is handled by bleach.
