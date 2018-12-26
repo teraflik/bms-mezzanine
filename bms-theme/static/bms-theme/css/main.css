@@ -1,24 +1,47 @@
+body {
+    font-weight: 400;
+    line-height: 1.75em;
+    color: #1d1601;
+	text-align: left;
+	padding-top: 0;
+	background-color: #f9d9a8;
+	background-image: url(/static/img/body-bg.jpg)
+}
+
 .bms-title{
 	color: rgb(112, 48, 160);
-	font-size: 3em;
+	font-size: 2.5em;
+	font-family: "Vesper Libre",helvetica,sans-serif;
+	font-weight: bold;
 	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
 }
 
 .bms-level-1{
 	color: rgb(192,0,0);
 	font-size: 2em;
+	font-family: "Vesper Libre",helvetica,sans-serif;
+	font-weight: bold;
 	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
 }
 
 .bms-level-2{
 	color: rgb(192,0,0);
 	font-size: 1.5em;
+	font-family: "Vesper Libre",helvetica,sans-serif;
+	font-weight: bold;
 	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
 }
 
 .bms-emphasis{
 	color: rgb(131, 60, 11);
 	font-size: 1.2em;
+	font-weight: bold;
 	text-align: center;
 }
 
@@ -26,3 +49,4 @@
 	font-size: 1em;
 	text-align: justify;
 }
+
