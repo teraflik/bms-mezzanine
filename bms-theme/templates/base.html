@@ -110,7 +110,7 @@
 
         <ul class="breadcrumb">
         {% spaceless %}
-        {% block breadcrumb_menu %}{% page_menu "pages/menus/breadcrumb.html" %}{% endblock %}
+        {% block breadcrumb_menu %}{% page_menu "includes/breadcrumb.html" %}{% endblock %}
         {% endspaceless %}
         </ul>
 
@@ -121,7 +121,7 @@
 
         <div class="col-md-3">
             {% block left_panel %}
-            <div class="panel panel-default tree">{% page_menu "pages/menus/tree.html" %}</div>
+            <div class="panel panel-default tree">{% page_menu "includes/tree.html" %}</div>
             {% endblock %}
         </div>
 
