@@ -66,7 +66,7 @@
         plugins: [
             "advlist autolink lists link image charmap print preview hr anchor textcolor",
             "searchreplace wordcount visualblocks code fullscreen colorpicker",
-            "insertdatetime media table contextmenu paste"
+            "insertdatetime media table contextmenu paste importcss"
         ],
         link_list: window.__link_list_url,
         relative_urls: false,
@@ -76,7 +76,7 @@
         statusbar: false,
         toolbar: ("insertfile undo redo | styleselect | fontselect fontsizeselect | " +
                   "forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify |" +
-                  "bullist numlist outdent indent | link image hr table | " +
+                  "bullist numlist outdent indent | link blockquote image hr table | " +
                   "removeformat searchreplace | code preview fullscreen"),
         font_formats: 'Vesper Libre=Vesper Libre,helvetica,sans-serif;Laila=Laila,arial,sans-serif',
         style_formats: [
@@ -85,9 +85,9 @@
             {title: 'Level 2', block: 'h3', classes: 'bms-level-2'},
             {title: 'Emphasis', block: 'p', classes: 'bms-emphasis'},
             {title: 'Text', block: 'p', classes: 'bms-text'},
-          ],
+        ],
         file_browser_callback: custom_file_browser,
-        content_css: window.__tinymce_css,
+        content_css: ['window.__tinymce_css','/static/bms-theme/css/main.css'],
         valid_elements: "*[*]"  // Don't strip anything since this is handled by bleach.
     };
 
