@@ -8,6 +8,28 @@ body {
 	background-image: url(/static/img/body-bg.jpg)
 }
 
+.hkp-logo {
+	height: 120px;
+}
+.hkp-logo-big {
+	height: 300px;
+}
+
+.book-thumbnail{
+	text-align: center;
+}
+.book-thumbnail > img{
+	width: 160px;
+	height: 254px;
+}
+.book-thumbnail > figcaption{
+	color: rgb(131, 60, 11);
+	font-size: 1em;
+	margin: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+
 .bms-title{
 	color: rgb(112, 48, 160);
 	font-size: 2.5em;
