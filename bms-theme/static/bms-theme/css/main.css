@@ -14,6 +14,30 @@ body {
 	background-image: url(/static/img/body-bg.jpg)
 }
 
+a {
+    color: #bc2e07;
+	text-decoration: none;
+	background-color: transparent
+}
+a:hover, a:focus {
+    color: #721c04;
+    text-decoration: underline;
+}
+
+#bms-header{
+	background: #da9d5b;
+    background-image: url(/static/img/header-bg.jpg);
+}
+
+#bms-toolbar {
+    background: #eebd89;
+	background-image: url(../img/toolbar-bg.jpg);
+	margin-right: -15px;
+	margin-left: -15px;
+	padding-right: 15px;
+    padding-left: 15px;
+}
+
 #bms-sidebar{
 	position: absolute;
 	left: 0;
@@ -113,6 +137,18 @@ body {
 	margin: 1em;
 	font-weight: bold;
 	text-align: center;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #bc2e07;
+    border-color: #b42c06;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+	color: #fff;
+    background-color: #9c2a0a;
+	border-color: #9c2a0a;
+	outline-color: #9c2a0a;
 }
 
 .bms-title{

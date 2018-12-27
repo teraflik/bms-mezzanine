@@ -84,7 +84,7 @@
                 </div>
                 {% endif %}
                 {% endnevercache %}
-                <div class="row">
+                <div class="row" id="bms-header">
                     <div class="col-sm-6 col-md-8">
                         {#<h1>{% block title %}{% endblock %}</h1>#}
                         <img class="hkp-logo img-responsive" src="{% static "img/hkp-logo.png" %}" />
@@ -95,13 +95,11 @@
                     </div>
                 </div>
 
-                <div>
-                    <ul class="breadcrumb">
-                        {% spaceless %}
-                        {% block breadcrumb_menu %}{% page_menu "includes/breadcrumb.html" %}{% endblock %}
-                        {% endspaceless %}
-                    </ul>
+                {% block breadcrumb_menu %}
+                <div id="bms-toolbar">
+                    {% page_menu "includes/breadcrumb.html" %}
                 </div>
+                {% endblock %}
 
                 <div>
                     {% block main %}{% endblock %}

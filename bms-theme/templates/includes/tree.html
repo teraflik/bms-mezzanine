@@ -6,7 +6,7 @@
   {% for page in page_branch %}
   {% if not has_home and page.is_primary and forloop.first %}
   <li{% if on_home %} class="active"{% endif %} id="tree-menu-home">
-    <a href="{% url "home" %}">पुस्तक सूची </a>
+    <a href="{% url "home" %}">मुखपृष्ठ</a>
   </li>
   {% endif %}
   {% if page.in_menu %}
