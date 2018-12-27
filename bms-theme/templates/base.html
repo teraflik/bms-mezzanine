@@ -64,11 +64,11 @@
     <div class="container-fluid bms-parent">
         <div class="row">
             <!-- SIDEBAR -->
+            {% block left_panel %}
             <div class="hidden-xs col-sm-4 col-md-3" id="bms-sidebar">
-                {% block left_panel %}
-                <div class="tree">{% page_menu "includes/tree.html" %}</div>
-                {% endblock %}
+                <div class="bms-tree">{% page_menu "includes/tree.html" %}</div>
             </div>
+            {% endblock %}
 
             <!-- MAIN CONTAINER -->
             <div class="col-xs-12 col-sm-8 col-md-9" id="bms-main">

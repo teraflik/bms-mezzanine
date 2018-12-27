@@ -7,7 +7,7 @@ body, html{
 body {
     font-weight: 400;
     line-height: 2.4em;
-    color: #1d1601;
+    color: #000000;
 	text-align: left;
 	padding-top: 0;
 	background-color: #f9d9a8;
@@ -24,6 +24,37 @@ a:hover, a:focus {
     text-decoration: underline;
 }
 
+/* Multi level menu */
+#bms-sidebar{
+	position: absolute;
+	left: 0;
+	height: 100%;
+	overflow-y: scroll;
+	border-right: 12px solid #735403;
+}
+
+.bms-tree ul ul {
+    display: none;
+}
+
+/*Remove the scrollbar from Chrome, Safari, Edge and IE*/
+#bms-sidebar::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+* {
+  -ms-overflow-style: none !important;
+}
+/* End */
+
+#bms-main {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	overflow-y: scroll;
+}
+
 #bms-header{
 	background: #da9d5b;
     background-image: url(/static/img/header-bg.jpg);
@@ -36,31 +67,6 @@ a:hover, a:focus {
 	margin-left: -15px;
 	padding-right: 15px;
     padding-left: 15px;
-}
-
-#bms-sidebar{
-	position: absolute;
-	left: 0;
-	height: 100%;
-	overflow-y: scroll;
-	border-right: 12px solid #735403;
-}
-
-#bms-main {
-	position: absolute;
-	right: 0;
-	height: 100%;
-	overflow-y: scroll;
-}
-
-/*Remove the scrollbar from Chrome, Safari, Edge and IE*/
-::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
-
-* {
-  -ms-overflow-style: none !important;
 }
 
 .hkp-logo {
@@ -77,52 +83,6 @@ a:hover, a:focus {
     justify-content: center;
     height: 100%;
 }
-
-/* Multi level menu */
-
-.u-vmenu ul li {
-	list-style: none;
-	display: block;
-    padding: 0;
-	margin: 0;
-	color: #1d1601;
-	border-color: #da9d5b;
-}
-.u-vmenu ul ul{
-	display: none;
-}
-.u-vmenu > ul > li {
-	height: 10em;
-}
-.u-vmenu ul li a {
-	display: block;
-	font-size: 14px;
-	color: #82846f;
-	text-decoration: none;
-	outline: none;
-}
-.u-vmenu > ul > li > a {
-	padding-left: 0;
-}
-.u-vmenu > ul > li > ul > li > a {
-	padding-left: 2em;
-}
-.u-vmenu > ul > li > ul > li > ul > li > a {
-	padding-left: 4em;
-}
-.u-vmenu > ul > li > ul > li > ul > li > ul > li > a {
-	padding-left: 6em;
-}
-.u-vmenu > ul > li > ul > li > ul > li > ul > li > ul > li > a {
-	padding-left: 6em;
-}
-.u-vmenu ul li a[data-option='on']{
-	background: url(/static/img/vmenu/on.png) right center no-repeat;
-}
-.u-vmenu ul li a[data-option='off'] {
-	background: url(/static/img/vmenu/off.png) right center no-repeat;
-}
-/* End */
 
 .book-thumbnail{
 	text-align: center;
@@ -183,13 +143,14 @@ a:hover, a:focus {
 
 .bms-emphasis{
 	color: rgb(131, 60, 11);
-	font-size: 1.2em;
+	font-size: 1.4em;
 	font-weight: bold;
 	text-align: center;
 }
 
 .bms-text{
-	font-size: 1em;
+	font-size: 1.20em;
 	text-align: justify;
+	text-indent: 50px;
 }
 
