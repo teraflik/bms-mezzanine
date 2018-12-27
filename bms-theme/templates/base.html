@@ -34,7 +34,7 @@
 
 <!-- bms-theme css here -->
 <link href="https://fonts.googleapis.com/css?family=Laila|Vesper+Libre" rel="stylesheet">
-<link rel="stylesheet" href="{% static "bms-theme/css/bootswatch-united.css" %}">
+{# <link rel="stylesheet" href="{% static "bms-theme/css/bootswatch-united.css" %}"> #}
 <link rel="stylesheet" href="{% static "bms-theme/css/main.css" %}">
 {% endcompress %}
 
@@ -42,6 +42,7 @@
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
 <script src="{% static "js/bootstrap.js" %}"></script>
 <script src="{% static "js/bootstrap-extras.js" %}"></script>
+<script src="{% static "bms-theme/js/main.js" %}"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> -->
@@ -60,104 +61,55 @@
 </head>
 
 <body id="{% block body_id %}body{% endblock %}">
-    {% comment %}
-    <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">{% trans "Toggle Navigation" %}</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                {% block navbar_title %}
-                {% if settings.SITE_TITLE %}<a class="navbar-brand" href="/">{{ settings.SITE_TITLE }}</a>{% endif %}
-                {% if settings.SITE_TAGLINE %}<p class="navbar-text visible-lg">{{ settings.SITE_TAGLINE }}</p>{% endif %}
+    <div class="container-fluid bms-parent">
+        <div class="row">
+            <!-- SIDEBAR -->
+            <div class="hidden-xs col-sm-4 col-md-3" id="bms-sidebar">
+                {% block left_panel %}
+                <div class="tree">{% page_menu "includes/tree.html" %}</div>
                 {% endblock %}
             </div>
-            <div class="navbar-collapse collapse">
-                {% block navbar_dropdown_menu %}{% page_menu "pages/menus/dropdown.html" %}{% endblock%}#}
+
+            <!-- MAIN CONTAINER -->
+            <div class="col-xs-12 col-sm-8 col-md-9" id="bms-main">
+                {% nevercache %}
+                {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                    <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                {% endnevercache %}
+                <div class="row">
+                    <div class="col-sm-6 col-md-8">
+                        {#<h1>{% block title %}{% endblock %}</h1>#}
+                        <img class="hkp-logo img-responsive" src="{% static "img/hkp-logo.png" %}" />
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 bms-search">
+                        {% search_form %}
+                    </div>
+                </div>
+
+                <div>
+                    <ul class="breadcrumb">
+                        {% spaceless %}
+                        {% block breadcrumb_menu %}{% page_menu "includes/breadcrumb.html" %}{% endblock %}
+                        {% endspaceless %}
+                    </ul>
+                </div>
+
+                <div>
+                    {% block main %}{% endblock %}
+                </div>
             </div>
+            
         </div>
     </div>
-    {% endcomment %}
-
-    <div class="container">
-        {% nevercache %}
-        {% if messages %}
-        <div class="messages">
-            {% for message in messages %}
-            <div class="alert alert-dismissable alert-{{ message.tags }}" data-alert="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                {{ message }}
-            </div>
-            {% endfor %}
-        </div>
-        {% endif %}
-        {% endnevercache %}
-
-        <div class="row">
-            <div class="col-sm-6 col-md-8">
-                {#<h1>{% block title %}{% endblock %}</h1>#}
-                <img class="hkp-logo" src="{% static "img/hkp-logo.png" %}" />
-            </div>
-            <div class="col-sm-6 col-md-4 bms-search">
-                {% search_form %}
-            </div>
-        </div>
-       
-       
-
-        <ul class="breadcrumb">
-        {% spaceless %}
-        {% block breadcrumb_menu %}{% page_menu "includes/breadcrumb.html" %}{% endblock %}
-        {% endspaceless %}
-        </ul>
-
-    </div>
-
-    <div class="container">
-        <div class="row">
-
-        <div class="col-md-3">
-            {% block left_panel %}
-            <div class="panel panel-default tree">{% page_menu "includes/tree.html" %}</div>
-            {% endblock %}
-        </div>
-
-        <div class="col-md-9">
-            {% block main %}{% endblock %}
-        </div>
-
-        {% comment %}
-        <div class="col-md-3">
-            {% nevercache %}
-            {% include "includes/language_selector.html" %}
-            {% include "includes/user_panel.html" %}
-            {% endnevercache %}
-        </div>
-        {% endcomment %}
-
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-        {# {% page_menu "pages/menus/footer.html" %} #}
-
-        <div class="row">
-        <p class="site-info text-center">
-            {% trans "Powered by" %}
-            <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
-            <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
-            {% trans "and" %}
-            <a href="http://www.djangoproject.com">Django</a>
-            <span class="separator">|</span>
-            {% trans "Theme by" %} <a target="_blank" href="http://getbootstrap.com">Bootstrap</a>
-        </p>
-        </div>
-        </div>
-    </footer>
 
     {% block footer_js %}
     {% include "includes/footer_scripts.html" %}

@@ -1,3 +1,9 @@
+body, html{
+	margin: 0;
+	overflow: hidden;
+	height: 100%;
+}
+
 body {
     font-weight: 400;
     line-height: 1.75em;
@@ -8,6 +14,31 @@ body {
 	background-image: url(/static/img/body-bg.jpg)
 }
 
+#bms-sidebar{
+	position: absolute;
+	left: 0;
+	height: 100%;
+	overflow-y: scroll;
+	border-right: 12px solid #735403;
+}
+
+#bms-main {
+	position: absolute;
+	right: 0;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+/*Remove the scrollbar from Chrome, Safari, Edge and IE*/
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+* {
+  -ms-overflow-style: none !important;
+}
+
 .hkp-logo {
 	height: 120px;
 }
@@ -15,12 +46,59 @@ body {
 .bms-search{
 	height: 120px;
 }
+
 .bms-search > div{
 	display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
     height: 100%;
 }
+
+/* Multi level menu */
+
+.u-vmenu ul li {
+	list-style: none;
+	display: block;
+    padding: 0;
+	margin: 0;
+	color: #1d1601;
+	border-color: #da9d5b;
+}
+.u-vmenu ul ul{
+	display: none;
+}
+.u-vmenu > ul > li {
+	height: 10em;
+}
+.u-vmenu ul li a {
+	display: block;
+	font-size: 14px;
+	color: #82846f;
+	text-decoration: none;
+	outline: none;
+}
+.u-vmenu > ul > li > a {
+	padding-left: 0;
+}
+.u-vmenu > ul > li > ul > li > a {
+	padding-left: 2em;
+}
+.u-vmenu > ul > li > ul > li > ul > li > a {
+	padding-left: 4em;
+}
+.u-vmenu > ul > li > ul > li > ul > li > ul > li > a {
+	padding-left: 6em;
+}
+.u-vmenu > ul > li > ul > li > ul > li > ul > li > ul > li > a {
+	padding-left: 6em;
+}
+.u-vmenu ul li a[data-option='on']{
+	background: url(/static/img/vmenu/on.png) right center no-repeat;
+}
+.u-vmenu ul li a[data-option='off'] {
+	background: url(/static/img/vmenu/off.png) right center no-repeat;
+}
+/* End */
 
 .book-thumbnail{
 	text-align: center;
