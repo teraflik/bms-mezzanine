@@ -10,7 +10,7 @@
     {% endif %}
     {% if page.in_menu %}
     <li class="{% if page.is_current %}active{% endif %} {% if page.is_current_or_ascendant %}active-branch{% endif %}">
-        <a class="bms-tree-expand" href="javascript:void(0)">[+]</a>
+        {% if page.has_children %}<a class="bms-tree-expand" href="javascript:void(0)">[+]</a>{% else %}&nbsp;-&nbsp;{% endif %}
         <a class="bms-tree-link" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
         {# wrap the next line with 'if page.is_current_or_ascendant' #}
         {# to only show child pages in the menu for the current page #}

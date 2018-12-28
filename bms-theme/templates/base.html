@@ -45,12 +45,14 @@
     <div class="wrapper">
         <!-- SIDEBAR -->
         {% block left_panel %}
-        <nav class="bms-tree" id="bms-sidebar">
+        <aside id="bms-sidebar">
             <div id="bms-sidebar-header">
                 <a href="{% url "home" %}"><img class="img-fluid" src="{% static "img/hkp-logo.png" %}" alt="SPAV Logo"/></a>
             </div>
+            <nav class="bms-tree">
             {% page_menu "includes/tree.html" %}
-        </nav>
+            </nav>
+        </aside>
         {% endblock %}
 
         <!-- MAIN CONTAINER -->

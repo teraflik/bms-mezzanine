@@ -68,6 +68,7 @@ body {
 /* Collapsible Tree Navigation */
 .bms-tree{
     line-height: 1.75em;
+    padding-right: 10px;
 }
 .bms-tree ul ul {
     display: none;
