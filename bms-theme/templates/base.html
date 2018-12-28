@@ -61,12 +61,12 @@
 </head>
 
 <body id="{% block body_id %}body{% endblock %}">
-    <div class="container-fluid bms-parent">
-        <div class="row">
+    <div class="container-fluid">
+        <div class="row" id="bms-parent">
             <!-- SIDEBAR -->
             {% block left_panel %}
             <div class="hidden-xs col-sm-4 col-md-3" id="bms-sidebar">
-                <div class="bms-tree">{% page_menu "includes/tree.html" %}</div>
+                <nav class="bms-tree">{% page_menu "includes/tree.html" %}</nav>
             </div>
             {% endblock %}
 
@@ -84,6 +84,7 @@
                 </div>
                 {% endif %}
                 {% endnevercache %}
+
                 <div class="row" id="bms-header">
                     <div class="col-sm-6 col-md-8">
                         {#<h1>{% block title %}{% endblock %}</h1>#}
@@ -101,7 +102,10 @@
                 </div>
                 {% endblock %}
 
-                <div>
+                <div id="bms-content">
+                    <button type="button" id="sidebarCollapse" class="btn">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    </button>
                     {% block main %}{% endblock %}
                 </div>
             </div>

@@ -14,16 +14,6 @@ body {
 	background-image: url(/static/img/body-bg.jpg)
 }
 
-a {
-    color: #bc2e07;
-	text-decoration: none;
-	background-color: transparent
-}
-a:hover, a:focus {
-    color: #721c04;
-    text-decoration: underline;
-}
-
 /* Multi level menu */
 #bms-sidebar{
 	position: absolute;
@@ -35,6 +25,21 @@ a:hover, a:focus {
 
 .bms-tree ul ul {
     display: none;
+}
+
+.bms-tree ul{
+	list-style: none;
+}
+
+.bms-tree li{
+    display: block;
+}
+
+.bms-tree li:hover{
+	background-color: #da9d5b;
+}
+.bms-tree li:hover a.bms-tree-link{
+	color: white;
 }
 
 /*Remove the scrollbar from Chrome, Safari, Edge and IE*/
@@ -109,6 +114,16 @@ a:hover, a:focus {
     background-color: #9c2a0a;
 	border-color: #9c2a0a;
 	outline-color: #9c2a0a;
+}
+
+a {
+    color: #bc2e07;
+	text-decoration: none;
+	background-color: transparent
+}
+a:hover, a:focus {
+    color: #721c04;
+    text-decoration: underline;
 }
 
 .bms-title{
