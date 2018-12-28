@@ -7,6 +7,7 @@ body {
 	background-image: url(/static/img/body-bg.jpg)
 }
 
+/* Collapsible side bar and main body styles */
 .wrapper {
     display: flex;
     width: 100%;
@@ -81,6 +82,10 @@ body {
 
 .bms-tree li{
     display: block;
+}
+
+.bms-tree li.primary>a{
+    font-weight: 600;
 }
 
 /* Main Container Styles */

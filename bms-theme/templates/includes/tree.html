@@ -9,13 +9,12 @@
     </li>
     {% endif %}
     {% if page.in_menu %}
-    <li class="{% if page.is_current %}active{% endif %} {% if page.is_current_or_ascendant %}active-branch{% endif %}">
+    <li class="{% if page.is_current %}active{% endif %}{% if page.is_current_or_ascendant %} active-branch{% endif %}{% if page.is_primary %} primary{% endif %}">
         {% if page.has_children %}
-        <a class="bms-tree-expand" href="javascript:void(0)"><i class="fas fa-plus fa-xs"></i></a>
+        <a class="bms-tree-expand" href="javascript:void(0)"><i class="fas fa-plus fa-xs"></i></a>&nbsp;
         {% else %}
-        <i class="fas fa-minus fa-xs"></i>
+        <i class="fas fa-minus fa-xs"></i>&nbsp;
         {% endif %}
-        &nbsp;
         <a class="bms-tree-link" href="{{ page.get_absolute_url }}">{{ page.title }}</a>
         {# wrap the next line with 'if page.is_current_or_ascendant' #}
         {# to only show child pages in the menu for the current page #}
