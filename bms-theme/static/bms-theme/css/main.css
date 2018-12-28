@@ -18,7 +18,9 @@ body {
     top: 0;
     left: 0;
     height: 100vh;
-	/* z-index: 999; */
+    /* z-index: 999; */
+    background: #eebd89;
+    background-image: url(/static/img/header-bottom.jpg);
 	border-right: 12px solid #735403;
     transition: all 0.3s;
 }
@@ -29,7 +31,7 @@ body {
 
 #bms-sidebar-header {
     background: #da9d5b;
-    background-image: url(/static/img/header-bg.jpg);
+    background-image: url(/static/img/header-top.jpg);
 }
 
 #bms-main {
@@ -63,21 +65,27 @@ body {
     }
 }
 
+/* Collapsible Tree Navigation */
+.bms-tree{
+    line-height: 1.75em;
+}
 .bms-tree ul ul {
     display: none;
 }
 
 .bms-tree ul{
-	list-style: none;
+    list-style: none;
+    padding-inline-start: 10px;
 }
 
 .bms-tree li{
     display: block;
 }
 
+/* Main Container Styles */
 #bms-header{
 	background: #da9d5b;
-    background-image: url(/static/img/header-bg.jpg);
+    background-image: url(/static/img/header-top.jpg);
 }
 #bms-header-top{
 	padding-top: 10px;
@@ -85,9 +93,10 @@ body {
 }
 #bms-header-bottom {
     background: #eebd89;
-	background-image: url(../img/toolbar-bg.jpg);
+	background-image: url(/static/img/header-bottom.jpg);
 }
 
+/* General Styles */
 .book-thumbnail{
 	text-align: center;
 }
