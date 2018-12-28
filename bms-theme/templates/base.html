@@ -67,7 +67,9 @@
 
                 {% block breadcrumb_menu %}
                 <div class="row" id="bms-header-bottom">
-                    {% page_menu "includes/breadcrumb.html" %}
+                    <div class="col">
+                        {% page_menu "includes/breadcrumb.html" %}
+                    </div>
                 </div>
                 {% endblock %}
             </header>

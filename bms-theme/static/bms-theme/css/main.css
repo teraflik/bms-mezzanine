@@ -91,16 +91,12 @@ body {
     background-image: url(/static/img/header-bg.jpg);
 }
 #bms-header-top{
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 #bms-header-bottom {
     background: #eebd89;
 	background-image: url(../img/toolbar-bg.jpg);
-	margin-right: -15px;
-	margin-left: -15px;
-	padding-right: 15px;
-    padding-left: 15px;
 }
 
 .book-thumbnail{

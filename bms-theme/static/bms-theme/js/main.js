@@ -8,4 +8,10 @@ $(document).ready(function() {
 		$('.collapse.in').toggleClass('in');
 		$('a[aria-expanded=true]').attr('aria-expanded', 'false');
 	});
+	$("#bms-sidebar-header").height($("#bms-header").height());
 });
+
+$(window).resize(function() {
+	$("#bms-sidebar-header").height($("#bms-header").height());
+});
+
