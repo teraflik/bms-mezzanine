@@ -3,6 +3,10 @@ $(document).ready(function() {
 	    $(this).next().next('.sub-menu').slideToggle();
 	    ev.stopPropagation();
 	});
+
+	$("#bms-sidebar").mCustomScrollbar({
+		theme: "minimal"
+	});
 	$('#sidebarCollapse').on('click', function () {
 		$('#bms-sidebar, #bms-main').toggleClass('active');
 		$('.collapse.in').toggleClass('in');
