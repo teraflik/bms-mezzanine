@@ -1,7 +1,7 @@
 {% load mezzanine_tags i18n %}
 
 <form class="form-inline" action="{% url "search" %}" role="search">
-<div class="input-group">
+<div class="input-group ml-auto">
     <input class="form-control" placeholder="यहाँ लिखे" aria-label="Search" type="search" name="q" value="{{ request.GET.q }}">
     <div class="input-group-append">
         <button class="btn btn-primary" type="submit">खोजें</button>

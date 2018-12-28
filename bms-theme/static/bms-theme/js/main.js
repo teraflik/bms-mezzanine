@@ -5,7 +5,8 @@ $(document).ready(function() {
 	});
 
 	$("#bms-sidebar").mCustomScrollbar({
-		theme: "minimal-dark"
+		theme: "minimal-dark",
+		scrollInertia: 60
 	});
 	$('#sidebarCollapse').on('click', function () {
 		$('#bms-sidebar, #bms-main').toggleClass('active');
