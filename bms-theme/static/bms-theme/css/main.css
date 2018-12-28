@@ -68,7 +68,9 @@ body {
 
 /* Collapsible Tree Navigation */
 .bms-tree{
-    line-height: 1.75em;
+    font-family: "Vesper Libre",helvetica,sans-serif;
+    font-size: 1em;
+    line-height: 1.8em;
     padding: 15px;
 }
 .bms-tree ul ul {
@@ -84,8 +86,9 @@ body {
     display: block;
 }
 
-.bms-tree li.primary>a{
+.bms-tree-level-0>li>a{
     font-weight: 600;
+    font-size: 1.1em;
 }
 
 /* Main Container Styles */
