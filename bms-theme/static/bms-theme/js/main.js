@@ -3,4 +3,9 @@ $(document).ready(function() {
 	    $(this).next().next('.sub-menu').slideToggle();
 	    ev.stopPropagation();
 	});
+	$('#sidebarCollapse').on('click', function () {
+		$('#bms-sidebar, #bms-main').toggleClass('active');
+		$('.collapse.in').toggleClass('in');
+		$('a[aria-expanded=true]').attr('aria-expanded', 'false');
+	});
 });

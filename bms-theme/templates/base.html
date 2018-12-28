@@ -1,51 +1,31 @@
 <!doctype html>
-<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+<html lang="{{ LANGUAGE_CODE }}">
 {% load pages_tags mezzanine_tags i18n staticfiles %}
 
 <head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
 <meta name="keywords" content="{% block meta_keywords %}{% endblock %}">
 <meta name="description" content="{% block meta_description %}{% endblock %}">
 
 <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
 
-{% ifinstalled mezzanine.blog %}
-<link rel="alternate" type="application/rss+xml" title="RSS" href="{% url "blog_post_feed" "rss" %}">
-<link rel="alternate" type="application/atom+xml" title="Atom" href="{% url "blog_post_feed" "atom" %}">
-{% endifinstalled %}
-
 {% compress css %}
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> -->
-<link rel="stylesheet" href="{% static "css/bootstrap.css" %}">
-<link rel="stylesheet" href="{% static "css/mezzanine.css" %}">
-{# <link rel="stylesheet" href="{% static "css/bootstrap-theme.css" %}"> #}
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/bootstrap-rtl.css" %}">
-{% endif %}
-{% ifinstalled cartridge.shop %}
-<link rel="stylesheet" href="{% static "css/cartridge.css" %}">
-{% if LANGUAGE_BIDI %}
-<link rel="stylesheet" href="{% static "css/cartridge.rtl.css" %}">
-{% endif %}
-{% endifinstalled %}
-
-{% block extra_css %}{% endblock %}
-
-<!-- bms-theme css here -->
-<link href="https://fonts.googleapis.com/css?family=Laila|Vesper+Libre" rel="stylesheet">
-{# <link rel="stylesheet" href="{% static "bms-theme/css/bootswatch-united.css" %}"> #}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Laila|Vesper+Libre">
 <link rel="stylesheet" href="{% static "bms-theme/css/main.css" %}">
+{% block extra_css %}{% endblock %}
 {% endcompress %}
 
 {% compress js %}
 <script src="{% static "mezzanine/js/"|add:settings.JQUERY_FILENAME %}"></script>
-<script src="{% static "js/bootstrap.js" %}"></script>
-<script src="{% static "js/bootstrap-extras.js" %}"></script>
-<script src="{% static "bms-theme/js/main.js" %}"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="{% static "bms-theme/js/main.js" %}"></script>
 {% block extra_js %}{% endblock %}
 {% endcompress %}
 
@@ -57,21 +37,42 @@
 <title>{% block meta_title %}{% endblock %}{% if settings.SITE_TITLE %} | {{ settings.SITE_TITLE }}{% endif %}</title>
 
 {% block extra_head %}{% endblock %}
-
 </head>
 
 <body id="{% block body_id %}body{% endblock %}">
-    <div class="container-fluid">
-        <div class="row" id="bms-parent">
-            <!-- SIDEBAR -->
-            {% block left_panel %}
-            <div class="hidden-xs col-sm-4 col-md-3" id="bms-sidebar">
-                <nav class="bms-tree">{% page_menu "includes/tree.html" %}</nav>
+    <div class="wrapper">
+        <!-- SIDEBAR -->
+        {% block left_panel %}
+        <nav class="bms-tree" id="bms-sidebar">
+            <div id="bms-sidebar-header">
+                <img class="img-fluid" src="{% static "img/hkp-logo.png" %}" alt="SPAV Logo"/>
             </div>
-            {% endblock %}
+            {% page_menu "includes/tree.html" %}
+        </nav>
+        {% endblock %}
 
-            <!-- MAIN CONTAINER -->
-            <div class="col-xs-12 col-sm-8 col-md-9" id="bms-main">
+        <!-- MAIN CONTAINER -->
+        <div id="bms-main">
+            <header class="container-fluid" id="bms-header">
+                <div class="row" id="bms-header-top">
+                    <div class="col-auto mr-auto">
+                        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                    <div class="col-auto">
+                        {% search_form %}
+                    </div>
+                </div>
+
+                {% block breadcrumb_menu %}
+                <div class="row" id="bms-header-bottom">
+                    {% page_menu "includes/breadcrumb.html" %}
+                </div>
+                {% endblock %}
+            </header>
+
+            <div class="container" id="bms-content">
                 {% nevercache %}
                 {% if messages %}
                 <div class="messages">
@@ -84,32 +85,8 @@
                 </div>
                 {% endif %}
                 {% endnevercache %}
-
-                <div class="row" id="bms-header">
-                    <div class="col-sm-6 col-md-8">
-                        {#<h1>{% block title %}{% endblock %}</h1>#}
-                        <img class="hkp-logo img-responsive" src="{% static "img/hkp-logo.png" %}" />
-                    </div>
-
-                    <div class="col-sm-6 col-md-4 bms-search">
-                        {% search_form %}
-                    </div>
-                </div>
-
-                {% block breadcrumb_menu %}
-                <div id="bms-toolbar">
-                    {% page_menu "includes/breadcrumb.html" %}
-                </div>
-                {% endblock %}
-
-                <div id="bms-content">
-                    <button type="button" id="sidebarCollapse" class="btn">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                    </button>
-                    {% block main %}{% endblock %}
-                </div>
+                {% block main %}{% endblock %}
             </div>
-            
         </div>
     </div>
 

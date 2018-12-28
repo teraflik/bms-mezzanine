@@ -10,9 +10,9 @@
 
     {% if page.is_current_or_ascendant %}
         {% if page.is_current %}
-        <small><span class="glyphicon glyphicon-chevron-right " aria-hidden="true"></span> </small>{{ page.title }}
+        &nbsp;<small><i class="fas fa-angle-double-right"></i></small>&nbsp;{{ page.title }}
         {% else %}
-        <small><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </small><a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
+        &nbsp;<small><i class="fas fa-angle-double-right"></i></small>&nbsp;<a href="{{ page.get_absolute_url }}">{{ page.title }}</a>
         {% endif %}
     {% if page.has_children %}{% page_menu page %}{% endif %}
     {% endif %}

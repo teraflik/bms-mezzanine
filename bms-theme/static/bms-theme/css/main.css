@@ -1,26 +1,66 @@
-body, html{
-	margin: 0;
-	overflow: hidden;
-	height: 100%;
-}
-
 body {
     font-weight: 400;
     line-height: 2.4em;
     color: #000000;
 	text-align: left;
-	padding-top: 0;
 	background-color: #f9d9a8;
 	background-image: url(/static/img/body-bg.jpg)
 }
 
-/* Multi level menu */
-#bms-sidebar{
-	position: absolute;
-	left: 0;
-	height: 100%;
-	overflow-y: scroll;
+.wrapper {
+    display: flex;
+    width: 100%;
+}
+
+#bms-sidebar {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+	/* z-index: 999; */
 	border-right: 12px solid #735403;
+    transition: all 0.3s;
+}
+
+#bms-sidebar.active {
+    margin-left: -300px;
+}
+
+#bms-sidebar-header {
+    background: #da9d5b;
+    background-image: url(/static/img/header-bg.jpg);
+}
+
+#bms-main {
+    width: calc(100% - 300px);
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#bms-main.active {
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    #bms-sidebar {
+        margin-left: -300px;
+    }
+    #bms-sidebar.active {
+        margin-left: 0;
+    }
+    #bms-main {
+        width: 100%;
+    }
+    #bms-main.active {
+        width: calc(100% - 300px);
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
 }
 
 .bms-tree ul ul {
@@ -35,14 +75,7 @@ body {
     display: block;
 }
 
-.bms-tree li:hover{
-	background-color: #da9d5b;
-}
-.bms-tree li:hover a.bms-tree-link{
-	color: white;
-}
-
-/*Remove the scrollbar from Chrome, Safari, Edge and IE*/
+/*Remove the scrollbar from Chrome, Safari, Edge and IE
 #bms-sidebar::-webkit-scrollbar {
     width: 0px;
     background: transparent;
@@ -53,40 +86,21 @@ body {
 }
 /* End */
 
-#bms-main {
-	position: absolute;
-	right: 0;
-	height: 100%;
-	overflow-y: scroll;
-}
-
 #bms-header{
 	background: #da9d5b;
     background-image: url(/static/img/header-bg.jpg);
 }
-
-#bms-toolbar {
+#bms-header-top{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+#bms-header-bottom {
     background: #eebd89;
 	background-image: url(../img/toolbar-bg.jpg);
 	margin-right: -15px;
 	margin-left: -15px;
 	padding-right: 15px;
     padding-left: 15px;
-}
-
-.hkp-logo {
-	height: 120px;
-}
-
-.bms-search{
-	height: 120px;
-}
-
-.bms-search > div{
-	display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
 }
 
 .book-thumbnail{
@@ -109,6 +123,7 @@ body {
     background-color: #bc2e07;
     border-color: #b42c06;
 }
+
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
 	color: #fff;
     background-color: #9c2a0a;
@@ -116,18 +131,19 @@ body {
 	outline-color: #9c2a0a;
 }
 
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
 a {
     color: #bc2e07;
-	text-decoration: none;
-	background-color: transparent
-}
-a:hover, a:focus {
-    color: #721c04;
-    text-decoration: underline;
 }
 
 .bms-title{
-	color: rgb(112, 48, 160);
+	color: #9c2a0a;
 	font-size: 2.5em;
 	font-family: "Vesper Libre",helvetica,sans-serif;
 	font-weight: bold;
