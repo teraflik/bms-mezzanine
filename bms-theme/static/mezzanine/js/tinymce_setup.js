@@ -83,9 +83,10 @@
             {title: 'Title', block: 'h1', classes: 'bms-title'},
             {title: 'Level 1', block: 'h2', classes: 'bms-level-1'},
             {title: 'Level 2', block: 'h3', classes: 'bms-level-2'},
-            {title: 'Emphasis', block: 'p', classes: 'bms-emphasis'},
-            {title: 'Text', block: 'p', classes: 'bms-text'},
+            {title: 'Emphasis', selector : 'p', inline: 'p', classes: 'bms-emphasis'},
+            {title: 'Text', selector : 'p', inline: 'p', classes: 'bms-text'},
         ],
+        style_formats_merge: false,
         file_browser_callback: custom_file_browser,
         content_css: ['window.__tinymce_css','/static/bms-theme/css/main.css'],
         valid_elements: "*[*]"  // Don't strip anything since this is handled by bleach.

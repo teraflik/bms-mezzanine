@@ -87,8 +87,8 @@ body {
 }
 
 .bms-tree-level-0>li>a{
-    font-weight: 600;
     font-size: 1.1em;
+    color: #022160;
 }
 
 /* Main Container Styles */
@@ -157,28 +157,28 @@ a {
     color: #bc2e07;
 }
 
-.bms-title{
-	color: #9c2a0a;
-	font-size: 2.5em;
+h1.bms-title{
+	color: #022160;
+    font-size: 2.5em;
+    font-weight: 300;
 	font-family: "Vesper Libre",helvetica,sans-serif;
-	font-weight: bold;
 	text-align: center;
 	margin-top: .5em;
 	margin-bottom: .5em;
 }
 
-.bms-level-1{
-	color: rgb(192,0,0);
+h2.bms-level-1{
+	color: rgb(194, 54, 54);
 	font-size: 2em;
 	font-family: "Vesper Libre",helvetica,sans-serif;
-	font-weight: bold;
+	font-weight: 600;
 	text-align: center;
 	margin-top: .5em;
 	margin-bottom: .5em;
 }
 
-.bms-level-2{
-	color: rgb(192,0,0);
+h3.bms-level-2{
+	color: rgb(3, 106, 15);
 	font-size: 1.5em;
 	font-family: "Vesper Libre",helvetica,sans-serif;
 	font-weight: bold;
@@ -187,14 +187,14 @@ a {
 	margin-bottom: .5em;
 }
 
-.bms-emphasis{
+p.bms-emphasis{
 	color: rgb(131, 60, 11);
 	font-size: 1.4em;
 	font-weight: bold;
 	text-align: center;
 }
 
-.bms-text{
+p.bms-text{
 	font-size: 1.20em;
 	text-align: justify;
 	text-indent: 50px;
