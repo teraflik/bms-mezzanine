@@ -47,7 +47,7 @@
         {% block left_panel %}
         <nav class="bms-tree" id="bms-sidebar">
             <div id="bms-sidebar-header">
-                <img class="img-fluid" src="{% static "img/hkp-logo.png" %}" alt="SPAV Logo"/>
+                <a href="{% url "home" %}"><img class="img-fluid" src="{% static "img/hkp-logo.png" %}" alt="SPAV Logo"/></a>
             </div>
             {% page_menu "includes/tree.html" %}
         </nav>
@@ -57,12 +57,12 @@
         <div id="bms-main">
             <header class="container-fluid" id="bms-header">
                 <div class="row" id="bms-header-top">
-                    <div class="col-auto mr-auto">
+                    <div class="col-2">
                         <button type="button" id="sidebarCollapse" class="btn btn-primary">
                             <i class="fas fa-bars"></i>
                         </button>
                     </div>
-                    <div class="col-auto">
+                    <div class="col-10">
                         {% search_form %}
                     </div>
                 </div>

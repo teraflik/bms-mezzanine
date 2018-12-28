@@ -5,7 +5,7 @@ $(document).ready(function() {
 	});
 
 	$("#bms-sidebar").mCustomScrollbar({
-		theme: "minimal"
+		theme: "minimal-dark"
 	});
 	$('#sidebarCollapse').on('click', function () {
 		$('#bms-sidebar, #bms-main').toggleClass('active');
@@ -16,6 +16,10 @@ $(document).ready(function() {
 });
 
 $(window).resize(function() {
-	$("#bms-sidebar-header").height($("#bms-header").height());
+	//to disable height equalization on narrow viewport
+	viewportwidth = $(window).width();
+	if (viewportwidth>768) {
+		$("#bms-sidebar-header").height($("#bms-header").height());
+		}
 });
 

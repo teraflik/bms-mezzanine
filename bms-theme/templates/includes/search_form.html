@@ -1,6 +1,10 @@
 {% load mezzanine_tags i18n %}
 
-    <form class="form-inline my-2 my-lg-0" action="{% url "search" %}" role="search">
-        <input class="form-control mr-sm-2" placeholder="यहाँ लिखे" aria-label="Search" type="search" name="q" value="{{ request.GET.q }}">
-        <button class="btn btn-primary my-2 my-sm-0" type="submit">खोजें</button>
-    </form>
+<form class="form-inline" action="{% url "search" %}" role="search">
+<div class="input-group">
+    <input class="form-control" placeholder="यहाँ लिखे" aria-label="Search" type="search" name="q" value="{{ request.GET.q }}">
+    <div class="input-group-append">
+        <button class="btn btn-primary" type="submit">खोजें</button>
+    </div>
+</div>
+</form>

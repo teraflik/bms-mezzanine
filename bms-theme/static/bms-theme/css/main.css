@@ -75,17 +75,6 @@ body {
     display: block;
 }
 
-/*Remove the scrollbar from Chrome, Safari, Edge and IE
-#bms-sidebar::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
-
-* {
-  -ms-overflow-style: none !important;
-}
-/* End */
-
 #bms-header{
 	background: #da9d5b;
     background-image: url(/static/img/header-bg.jpg);
