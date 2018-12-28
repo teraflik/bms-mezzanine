@@ -125,6 +125,18 @@ body {
 	border-color: #9c2a0a;
 	outline-color: #9c2a0a;
 }
+.btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(156, 42, 10, 0.5);
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #9c2a0a;
+	border-color: #9c2a0a;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(156, 42, 10, 0.5);
+}
 
 a,
 a:hover,

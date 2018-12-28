@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% load i18n mezzanine_tags %}
+
+{% block meta_title %}खोज का परिणाम{% endblock %}
+{% block title %}खोज का परिणाम{% endblock %}
+{% block extra_head %}
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block breadcrumb_menu %}
+<div class="row" id="bms-header-bottom">
+        <div class="col-12">
+            <p class="lead text-center mb-0">खोज का परिणाम</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block main %}
+
+<p>
+{% if results.paginator.count == 0 %}
+{% blocktrans %}
+आपकी खोज से मिलते हुए कोई परिणाम नहीं मिले।
+{% endblocktrans %}
+{% else %}
+{% blocktrans with start=results.start_index end=results.end_index total=results.paginator.count %}
+आपकी खोज से मेल खाते हुए {{ total }} परिणामों में से {{ start }} से {{ end }} परिणाम दिखा रहे हैं
+{% endblocktrans %}
+{% endif %}
+</p>
+
+<div id="search-results">
+{% for result in results.object_list %}
+{% with result.get_absolute_url as result_url %}
+    <h5>
+        {{ forloop.counter0|add:results.start_index }})
+        {% if result_url %}
+            <a href="{{ result_url }}">{{ result }}</a>
+        {% else %}
+            {{ result }}
+        {% endif %}
+    </h5>
+    {% if result.description != result|stringformat:"s" %}
+        <p>{{ result.description|truncatewords_html:20|safe }}</p>
+    {% endif %}
+    {% if result_url %}
+        <a href="{{ result_url }}">और पढ़ें</a>
+    {% endif %}
+{% endwith %}
+{% endfor %}
+</div>
+
+{% pagination_for results %}
+
+{% endblock %}
