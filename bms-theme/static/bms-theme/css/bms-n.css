@@ -1,10 +1,10 @@
 .bms-n #bms-sidebar {
     background: rgba(0, 0, 0, 0.3);
-	border-left: 7px solid rgba(0, 0, 0, 0.2);
+	  border-right: 7px solid rgba(0, 0, 0);
 }
 
 .bms-n .bms-tree-level-0>li>a{
-    font-size: 1.1em;
+  font-size: 1.1em;
 	color: #5bc0de;
 }
 
