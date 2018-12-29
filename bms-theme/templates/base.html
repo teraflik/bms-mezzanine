@@ -73,24 +73,32 @@
                 </div>
 
                 
-                <div class="row" id="bms-header-bottom">
-                    <div class="col-9" id="bms-breadcrumb">
+                <div class="row justify-content-between" id="bms-header-bottom">
+                    <div class="col" id="bms-breadcrumb">
                         {% block breadcrumb_menu %}
                         {% page_menu "includes/breadcrumb.html" %}
                         {% endblock %}
                     </div>
-                    <div class="col-2">
-                        <input id="font-size-slider" type="range" min="50" max="200" value ="100" step="10">
-                    </div>
-                    <div class="col-1">
-                        <div id="night-mode-switch" class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-primary active" id="bms-day-mode">
-                                <input type="radio" name="Day Mode" value="dayMode" autocomplete="off" checked><i class="fa fa-sun fa-xs"></i>
-                            </label>
-                            <label class="btn btn-primary" id="bms-night-mode">
-                                <input type="radio" name="Night Mode" value="nightMode" autocomplete="off"><i class="fa fa-moon fa-xs"></i>
-                            </label>
+                    <div class="col">
+                        <div class="dropdown" id="bms-settings">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-cogs"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-item"><input id="font-size-slider" type="range" min="50" max="200" value ="100" step="10"></div>
+                                <div class="dropdown-item">
+                                    <div id="night-mode-switch" class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-primary active" id="bms-day-mode">
+                                            <input type="radio" name="Day Mode" value="dayMode" autocomplete="off" checked><i class="fa fa-sun fa-xs"></i>
+                                        </label>
+                                        <label class="btn btn-primary" id="bms-night-mode">
+                                            <input type="radio" name="Night Mode" value="nightMode" autocomplete="off"><i class="fa fa-moon fa-xs"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
                 
