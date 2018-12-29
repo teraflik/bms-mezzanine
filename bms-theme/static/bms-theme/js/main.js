@@ -15,6 +15,7 @@ $(document).ready(function() {
 	});
 	$("#bms-sidebar-header").height($("#bms-header").height());
 
+	//jQuery to load pages using AJAX
 	$('.bms-tree .bms-tree-link').on('click', function(e){
 		var target = $(this).attr('href');
 		var parser = document.createElement('a');
@@ -25,11 +26,29 @@ $(document).ready(function() {
 			complete: function(responseHtml){
 				var newTitle = $(responseHtml).filter('title').text();
 				$('#bms-content').html( $(responseHtml.responseText).find('#bms-content').html() );
-				$('#bms-header-bottom').html( $(responseHtml.responseText).find('#bms-header-bottom').html() );
+				$('#bms-breadcrumb').html( $(responseHtml.responseText).find('#bms-breadcrumb').html() );
 				window.history.pushState(newTitle, newTitle, parser.pathname);
 			}
 		});
 		return false;
+	});
+
+	//jQuery to handle font-size slider
+	$('#font-size-slider').on('change', function () {
+		var v = $(this).val();
+		$('#bms-content').css('font-size', v + '%');
+		$('#bms-content').css('line-height', Math.max(3,(2.4 - v/100)) +'em');
+		$('#font-size-value').html(v);
+	});
+
+	//jQuery to handle day-night mode switch
+	$('#night-mode-switch input[type=radio]').change(function() {
+		if (this.value == 'dayMode') {
+			$('body').toggleClass('bms-n bms-d');
+		}
+		else if (this.value == 'nightMode') {
+			$('body').toggleClass('bms-d bms-n');
+		}
 	});
 });
 

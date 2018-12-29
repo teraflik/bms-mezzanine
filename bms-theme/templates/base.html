@@ -18,6 +18,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Laila|Vesper+Libre">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 <link rel="stylesheet" href="{% static "bms-theme/css/main.css" %}">
+<link rel="stylesheet" href="{% static "bms-theme/css/bootswatch-slate.min.css" %}">
+<link rel="stylesheet" href="{% static "bms-theme/css/bms-d.css" %}">
+<link rel="stylesheet" href="{% static "bms-theme/css/bms-n.css" %}">
 {% block extra_css %}{% endblock %}
 {% endcompress %}
 
@@ -41,7 +44,7 @@
 {% block extra_head %}{% endblock %}
 </head>
 
-<body id="{% block body_id %}body{% endblock %}">
+<body id="{% block body_id %}body{% endblock %}" class="bms-d">
     <div class="wrapper">
         <!-- SIDEBAR -->
         {% block left_panel %}
@@ -69,13 +72,28 @@
                     </div>
                 </div>
 
-                {% block breadcrumb_menu %}
+                
                 <div class="row" id="bms-header-bottom">
-                    <div class="col">
+                    <div class="col-9" id="bms-breadcrumb">
+                        {% block breadcrumb_menu %}
                         {% page_menu "includes/breadcrumb.html" %}
+                        {% endblock %}
+                    </div>
+                    <div class="col-2">
+                        <input id="font-size-slider" type="range" min="50" max="200" value ="100" step="10">
+                    </div>
+                    <div class="col-1">
+                        <div id="night-mode-switch" class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-primary active" id="bms-day-mode">
+                                <input type="radio" name="Day Mode" value="dayMode" autocomplete="off" checked><i class="fa fa-sun fa-xs"></i>
+                            </label>
+                            <label class="btn btn-primary" id="bms-night-mode">
+                                <input type="radio" name="Night Mode" value="nightMode" autocomplete="off"><i class="fa fa-moon fa-xs"></i>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                {% endblock %}
+                
             </header>
 
             <div class="container" id="bms-content">

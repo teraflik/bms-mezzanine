@@ -1,0 +1,195 @@
+.bms-d #bms-sidebar {
+    background: #eebd89;
+    background-image: url(/static/img/header-bottom.jpg);
+	border-right: 12px solid #735403;
+}
+
+.bms-d #bms-sidebar-header {
+    background: #da9d5b;
+    background-image: url(/static/img/header-top.jpg);
+}
+
+
+.bms-d #bms-main {
+    background-color: #f9d9a8;
+	background-image: url(/static/img/body-bg.jpg)
+}
+
+.bms-d .bms-tree-level-0>li>a{
+    font-size: 1.1em;
+    color: #022160;
+}
+
+.bms-d #bms-header{
+	background: #da9d5b;
+    background-image: url(/static/img/header-top.jpg);
+}
+
+.bms-d #bms-header-bottom {
+    background: #eebd89;
+	background-image: url(/static/img/header-bottom.jpg);
+}
+
+.bms-d .btn-primary {
+    color: #fff;
+    background-color: #bc2e07;
+    border-color: #b42c06;
+    background-image: none;
+}
+
+.bms-d .btn-primary:hover, 
+.bms-d .btn-primary:focus, 
+.bms-d .btn-primary:active{
+	color: #fff;
+    background-color: #9c2a0a;
+	border-color: #9c2a0a;
+    outline-color: #9c2a0a;
+    background-image: none;
+}
+
+.bms-d .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(156, 42, 10, 0.5);
+    background-image: none;
+}
+
+.bms-d .btn-primary:not(:disabled):not(.disabled):active,
+.bms-d .btn-primary:not(:disabled):not(.disabled):focus,
+.bms-d .btn-primary:not(:disabled):not(.disabled):hover,
+.bms-d .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #9c2a0a;
+    border-color: #9c2a0a;
+    background-image: none;
+}
+
+.bms-d .btn-primary:not(:disabled):not(.disabled):active:focus,
+.bms-d .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(156, 42, 10, 0.5);
+}
+
+.bms-d h1, .bms-d h2, .bms-d h3, .bms-d h4, .bms-d h5, .bms-d h6 {
+    text-shadow: none;
+}
+
+.bms-d .wrapper{
+    color: #000000;
+}
+.bms-d a {
+    color: #bc2e07;
+}
+
+.bms-d #night-mode-switch .btn-primary.active {
+    background-color: #9c2a0a;
+    border-color: #9c2a0a;
+    box-shadow: 0 0 0 0.1rem rgba(156, 42, 10, 0.5);
+}
+
+.bms-d h1.bms-title{
+	color: #022160;
+    font-size: 2.5em;
+    font-weight: 300;
+	font-family: "Vesper Libre",helvetica,sans-serif;
+	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+.bms-d h2.bms-level-1{
+	color: rgb(194, 54, 54);
+	font-size: 2em;
+	font-family: "Vesper Libre",helvetica,sans-serif;
+	font-weight: 600;
+	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+.bms-d h3.bms-level-2{
+	color: rgb(3, 106, 15);
+	font-size: 1.5em;
+	font-family: "Vesper Libre",helvetica,sans-serif;
+	font-weight: bold;
+	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+.bms-d p.bms-emphasis{
+	color: rgb(131, 60, 11);
+	font-size: 1.4em;
+	font-weight: bold;
+	text-align: center;
+}
+
+.bms-d p.bms-text{
+    color: #000000;
+	font-size: 1.20em;
+	text-align: justify;
+	text-indent: 50px;
+}
+
+.bms-d input[type=range] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 10px 0;
+  }
+  .bms-d input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: #f9d9a8;
+    border-radius: 7.1px;
+  }
+  .bms-d input[type=range]::-webkit-slider-thumb {
+    height: 25px;
+    width: 34px;
+    border-radius: 3px;
+    background: rgba(188, 46, 7, 0.93);
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -10px;
+  }
+  .bms-d input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #f9dbad;
+  }
+  .bms-d input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: #f9dbad;
+    border-radius: 7.1px;
+  }
+  .bms-d input[type=range]::-moz-range-thumb {
+    height: 25px;
+    width: 34px;
+    border-radius: 3px;
+    background: rgba(188, 46, 7, 0.93);
+    cursor: pointer;
+  }
+  .bms-d input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+  }
+  .bms-d input[type=range]::-ms-fill-lower {
+    background: #f9dbad;
+    border-radius: 14.2px;
+  }
+  .bms-d input[type=range]::-ms-fill-upper {
+    background: #f9dbad;
+    border-radius: 14.2px;
+  }
+  .bms-d input[type=range]::-ms-thumb {
+    height: 25px;
+    width: 34px;
+    border-radius: 3px;
+    background: rgba(188, 46, 7, 0.93);
+    cursor: pointer;
+    height: 5px;
+  }
+  .bms-d input[type=range]:focus::-ms-fill-lower {
+    background: #f9dbad;
+  }
+  .bms-d input[type=range]:focus::-ms-fill-upper {
+    background: #f9dbad;
+  }
