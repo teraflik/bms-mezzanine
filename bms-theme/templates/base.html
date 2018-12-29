@@ -62,18 +62,18 @@
         <div id="bms-main">
             <header class="container-fluid" id="bms-header">
                 <div class="row" id="bms-header-top">
-                    <div class="col-4">
+                    <div class="col-5">
                         <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
                             <button type="button" id="sidebarCollapse" class="btn btn-primary">
                                 <i class="fas fa-angle-double-left"></i>
                             </button>
                             <div class="btn-group" role="group">
-                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="bms-settings-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="fas fa-cogs"></i>
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-menu" aria-labelledby="bms-settings-dropdown">
                                 <div class="dropdown-item"><input id="font-size-slider" type="range" min="50" max="200" value ="100" step="10"></div>
-                                    <div class="dropdown-item">
+                                    <div class="dropdown-item text-center">
                                         <div id="night-mode-switch" class="btn-group btn-group-toggle" data-toggle="buttons">
                                             <label class="btn btn-primary active" id="bms-day-mode">
                                                 <input type="radio" name="Day Mode" value="dayMode" autocomplete="off" checked><i class="fa fa-sun fa-xs"></i>
@@ -87,7 +87,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-8">
+                    <div class="col-7">
                         {% search_form %}
                     </div>
                 </div>
