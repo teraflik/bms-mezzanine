@@ -1,5 +1,5 @@
 {% load i18n pages_tags %}
-
+{% spaceless %}
 {% if page_branch_in_menu %}
 <ul class="sub-menu bms-tree-level-{{ branch_level }}">
     {% for page in page_branch %}
@@ -24,3 +24,4 @@
     {% endfor %}
 </ul>
 {% endif %}
+{% endspaceless %}

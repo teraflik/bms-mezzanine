@@ -20,13 +20,13 @@
 
 <p>
 {% if results.paginator.count == 0 %}
-{% blocktrans %}
+
 आपकी खोज से मिलते हुए कोई परिणाम नहीं मिले।
-{% endblocktrans %}
+
 {% else %}
-{% blocktrans with start=results.start_index end=results.end_index total=results.paginator.count %}
-आपकी खोज से मेल खाते हुए {{ total }} परिणामों में से {{ start }} से {{ end }} परिणाम दिखा रहे हैं
-{% endblocktrans %}
+
+आपकी खोज से मेल खाते हुए {{ results.paginator.count }} परिणामों में से {{ results.start_index }} से {{ results.end_index }} परिणाम दिखा रहे हैं
+
 {% endif %}
 </p>
 
@@ -42,10 +42,7 @@
         {% endif %}
     </h5>
     {% if result.description != result|stringformat:"s" %}
-        <p>{{ result.description|truncatewords_html:20|safe }}</p>
-    {% endif %}
-    {% if result_url %}
-        <a href="{{ result_url }}">और पढ़ें</a>
+        <p>{{ result.description|truncatewords_html:50|safe }}</p>
     {% endif %}
 {% endwith %}
 {% endfor %}
