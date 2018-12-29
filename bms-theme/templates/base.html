@@ -63,9 +63,29 @@
             <header class="container-fluid" id="bms-header">
                 <div class="row" id="bms-header-top">
                     <div class="col-2">
-                        <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                            <i class="fas fa-angle-double-left"></i>
-                        </button>
+                        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                                <i class="fas fa-angle-double-left"></i>
+                            </button>
+                            <div class="btn-group" role="group">
+                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-cogs"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div class="dropdown-item"><input id="font-size-slider" type="range" min="50" max="200" value ="100" step="10"></div>
+                                    <div class="dropdown-item">
+                                        <div id="night-mode-switch" class="btn-group btn-group-toggle" data-toggle="buttons">
+                                            <label class="btn btn-primary active" id="bms-day-mode">
+                                                <input type="radio" name="Day Mode" value="dayMode" autocomplete="off" checked><i class="fa fa-sun fa-xs"></i>
+                                            </label>
+                                            <label class="btn btn-primary" id="bms-night-mode">
+                                                <input type="radio" name="Night Mode" value="nightMode" autocomplete="off"><i class="fa fa-moon fa-xs"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-10">
                         {% search_form %}
@@ -78,27 +98,6 @@
                         {% block breadcrumb_menu %}
                         {% page_menu "includes/breadcrumb.html" %}
                         {% endblock %}
-                    </div>
-                    <div class="col">
-                        <div class="dropdown" id="bms-settings">
-                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-cogs"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-item"><input id="font-size-slider" type="range" min="50" max="200" value ="100" step="10"></div>
-                                <div class="dropdown-item">
-                                    <div id="night-mode-switch" class="btn-group btn-group-toggle" data-toggle="buttons">
-                                        <label class="btn btn-primary active" id="bms-day-mode">
-                                            <input type="radio" name="Day Mode" value="dayMode" autocomplete="off" checked><i class="fa fa-sun fa-xs"></i>
-                                        </label>
-                                        <label class="btn btn-primary" id="bms-night-mode">
-                                            <input type="radio" name="Night Mode" value="nightMode" autocomplete="off"><i class="fa fa-moon fa-xs"></i>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
                 

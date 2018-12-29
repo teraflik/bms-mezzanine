@@ -88,7 +88,7 @@
     height: 25px;
     width: 34px;
     border-radius: 3px;
-    background: rgb(58, 63, 68);
+    background: rgb(19, 17, 17);
     cursor: pointer;
     -webkit-appearance: none;
     margin-top: -10px;
@@ -107,7 +107,7 @@
     height: 25px;
     width: 34px;
     border-radius: 3px;
-    background: rgb(58, 63, 68, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     cursor: pointer;
   }
   .bms-n input[type=range]::-ms-track {
@@ -127,7 +127,7 @@
     height: 25px;
     width: 34px;
     border-radius: 3px;
-    background: rgb(58, 63, 68, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     cursor: pointer;
     height: 5px;
   }

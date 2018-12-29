@@ -1,0 +1,49 @@
+body {
+    font-weight: 400;
+    line-height: 2.4em;
+	text-align: left;
+}
+
+h1.bms-title{
+	color: #022160;
+    font-size: 2.5em;
+    font-weight: 300;
+	font-family: "Vesper Libre",helvetica,sans-serif;
+	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+h2.bms-level-1{
+	color: rgb(194, 54, 54);
+	font-size: 2em;
+	font-family: "Vesper Libre",helvetica,sans-serif;
+	font-weight: 600;
+	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+h3.bms-level-2{
+	color: rgb(3, 106, 15);
+	font-size: 1.5em;
+	font-family: "Vesper Libre",helvetica,sans-serif;
+	font-weight: bold;
+	text-align: center;
+	margin-top: .5em;
+	margin-bottom: .5em;
+}
+
+p.bms-emphasis{
+	color: rgb(131, 60, 11);
+	font-size: 1.4em;
+	font-weight: bold;
+	text-align: center;
+}
+
+p.bms-text{
+    color: #000000;
+	font-size: 1.20em;
+	text-align: justify;
+	text-indent: 50px;
+}
